@@ -10,7 +10,7 @@ import Experience from "./components/Experience"
 function App() {
   return (
     <>
-      <Canvas>
+      <Canvas shadows>
         <Experience />
       </Canvas>
     </>

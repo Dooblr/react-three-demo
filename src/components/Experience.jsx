@@ -10,8 +10,14 @@ const Experience = () => {
       {/* Directional light shining down from the middle of the scene */}
       <directionalLight
         intensity={5}
-        position={[0, 10, 0]} // Positioned above the scene
+        position={[0, 10, 0]}
         castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-left={-5}
+        shadow-camera-right={5}
+        shadow-camera-top={5}
+        shadow-camera-bottom={-5}
       />
       <Car />
       {/* Uncomment if needed */}
