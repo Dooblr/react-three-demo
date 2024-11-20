@@ -1,10 +1,6 @@
-import { useState, Suspense } from "react"
 import "./App.scss"
 
 import { Canvas } from "@react-three/fiber"
-import { ContactShadows, Environment, OrbitControls } from "@react-three/drei"
-// import Cube from "./assets/cube/Cube"
-import Earth from "./assets/earth/Earth"
 import Experience from "./components/Experience"
 
 function App() {
