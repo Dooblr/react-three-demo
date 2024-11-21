@@ -1,54 +1,29 @@
+//src/App.jsx
+
 import "./App.scss"
 
 import { Canvas } from "@react-three/fiber"
 import Experience from "./components/Experience"
+import { useEffect, useState } from "react"
+import React from "react"
 
-function App() {
+const App = () => {
+  const [isRotating, setIsRotating] = useState(true)
+
   return (
     <>
       <Canvas shadows>
-        <Experience />
+        <Experience isRotating={isRotating} />
       </Canvas>
+      <div
+        style={{ position: "absolute", top: "20px", left: "20px", zIndex: 1 }}
+      >
+        <button className="btn btn-primary" onClick={() => setIsRotating(!isRotating)}>
+          {isRotating ? "Stop Rotation" : "Start Rotation"}
+        </button>
+      </div>
     </>
   )
 }
 
 export default App
-
-// import { useState, Suspense } from "react"
-// import "./App.scss"
-
-// import { Canvas } from "@react-three/fiber"
-// import { ContactShadows, Environment, OrbitControls } from "@react-three/drei"
-// import Cube from "./assets/cube/Cube"
-// import Earth from "./assets/earth/Earth"
-
-// function App() {
-//   return (
-//     <>
-//       <Canvas>
-//         <ambientLight intensity={1.5} />
-//         <OrbitControls enableZoom />
-//         <Suspense fallback={null}>
-//           <Earth />
-//         </Suspense>
-//         <Environment preset="sunset" />
-//         <ContactShadows
-//           position={[0, -2, 0]}
-//           opacity={0.5}
-//           scale={50}
-//           blur={1}
-//           far={10}
-//           resolution={256}
-//           color="#000000"
-//         />
-//       </Canvas>
-
-//       <div>
-//         <h1>Earth</h1>
-//       </div>
-//     </>
-//   )
-// }
-
-// export default App
